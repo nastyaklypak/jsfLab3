@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(145deg, #ffffff, #e3f2fd);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.header .logo h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #1a237e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.header nav ul li a.active,
+.header nav ul li a:hover {
+  color: #1a237e;
+  font-weight: 700;
+}
+
+.username {
+  font-weight: bold;
+  color: #0d1b2a;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}
+
+.logout-button i {
+  font-size: 1.2rem;
+}
+
+.admin-link {
+  background: #1a237e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.admin-link:hover {
+  background: #283593;
+}
+
+.admin-label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #1a237e;
+}
+
+select {
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}

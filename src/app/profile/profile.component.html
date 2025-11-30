@@ -1,0 +1,62 @@
+<div class="profile-container" *ngIf="user">
+  <h1>User Profile</h1>
+
+  <div class="profile-header">
+    <div class="avatar">
+      <i class="material-icons">person</i>
+    </div>
+    <div class="user-info">
+      <h2 *ngIf="!isEditing">{{ user.username }}</h2>
+      <input *ngIf="isEditing" [(ngModel)]="user.username" type="text" />
+
+      <p *ngIf="!isEditing">{{ user.role }}</p>
+      <input *ngIf="isEditing" [(ngModel)]="user.role" type="text" />
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h3>Profile Information</h3>
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="label">Email</span>
+        <span class="value">{{ user.username | lowercase }}@myapp.com</span>
+      </div>
+      <div class="info-card">
+        <span class="label">Member Since</span>
+        <span class="value">
+          <span *ngIf="!isEditing">{{ user.memberSince }}</span>
+          <input *ngIf="isEditing" [(ngModel)]="user.memberSince" type="text" />
+        </span>
+      </div>
+      <div class="info-card">
+        <span class="label">Account Type</span>
+        <span class="value">
+          <span *ngIf="!isEditing">{{ user.accountType }}</span>
+          <input *ngIf="isEditing" [(ngModel)]="user.accountType" type="text" />
+        </span>
+      </div>
+      <div class="info-card">
+        <span class="label">Status</span>
+        <span class="value" [ngClass]="{'status-active': user.status==='Active', 'status-inactive': user.status!=='Active'}">
+          <span *ngIf="!isEditing">{{ user.status }}</span>
+          <select *ngIf="isEditing" [(ngModel)]="user.status">
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h3>About</h3>
+    <p>
+      This is your personalized profile page. Here you can view and manage your account 
+      information, preferences, and settings. This page is protected and only accessible 
+      to authenticated users.
+    </p>
+
+    <button class="edit-profile" *ngIf="!isEditing" (click)="toggleEdit()">Edit Profile</button>
+    <button class="edit-profile" *ngIf="isEditing" (click)="saveChanges()">Save</button>
+  </div>
+</div>

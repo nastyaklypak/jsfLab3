@@ -1,0 +1,14 @@
+<div class="news-container">
+  <h1>Останні новини</h1>
+  <div class="articles">
+    <article *ngFor="let article of articles; trackBy: trackById" class="article-card">
+      <i class="material-icons article-icon">article</i>
+      <div class="article-content">
+        <h3>{{ article.title }}</h3>
+        <p class="date">{{ article.date }}</p>
+        <p class="excerpt">{{ getExcerpt(article, 150) }}</p>
+        <button class="read-more">Читати далі</button>
+      </div>
+    </article>
+  </div>
+</div>

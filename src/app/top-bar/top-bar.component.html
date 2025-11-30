@@ -1,0 +1,38 @@
+<header class="header">
+  <a routerLink="/" class="logo">
+    <h1>MyApp</h1>
+  </a>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li><a routerLink="/news" routerLinkActive="active">News</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+
+      
+      <li>
+        <a *ngIf="authService.hasRole('Administrator')" routerLink="/admin" routerLinkActive="active" class="admin-link">Admin Panel</a>
+      </li>
+
+      
+      <li *ngIf="authService.hasRole('Administrator')">
+        <span class="admin-label">Switch User:</span>
+        <select (change)="switchUser($event.target.value)">
+          <option *ngFor="let u of allUsers" [value]="u.username">{{ u.username }}</option>
+        </select>
+      </li>
+
+      <!-- Hi Username -->
+      <li *ngIf="currentUser">
+        <span class="username">Hi, {{ currentUser.username }}</span>
+      </li>
+
+      <!-- Logout -->
+      <li *ngIf="authService.isAuthenticated()">
+        <button (click)="logout()" class="logout-button">
+          <i class="material-icons">logout</i> Logout
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>

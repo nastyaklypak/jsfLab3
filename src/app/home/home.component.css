@@ -1,0 +1,97 @@
+.home-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #1a237e;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+p {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Сітка для фіч */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Стиль картки фічі у стилі новин */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(145deg, #f9faff, #ffffff);
+  padding: 24px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #1a237e;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Іконка фічі */
+.feature-icon {
+  font-size: 48px;
+  color: #1976d2;
+  margin-bottom: 20px;
+}
+
+/* Заголовок фічі */
+.feature-card h3 {
+  color: #0d1b2a;
+  margin: 0 0 10px 0;
+  font-size: 1.9rem;
+}
+
+/* Опис фічі */
+.feature-card p {
+  color: #333;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+/* Кнопка "Read More" для фіч (якщо потрібно) */
+.read-more {
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.read-more:hover {
+  background-color: #1a237e;
+  transform: translateY(-2px);
+}
+
+/* Адаптивність */
+@media (max-width: 700px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    text-align: center;
+  }
+}
